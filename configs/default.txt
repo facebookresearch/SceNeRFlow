@@ -1,0 +1,115 @@
+expname = SOME_EXPERIMENT_NAME
+datadir = ./SOME_INPUT_SCENE_FOLDER/
+test_cameras = ['StaticCamera.008']
+
+basedir = ./results/
+
+debug = False
+backbone = ngp
+prefer_cutlass_over_fullyfused_mlp = False
+slurm = False
+multi_gpu = False
+
+factor = 1
+render_factor = 2
+
+tracking_mode = temporal
+optimization_mode = per_timestep
+variant = snf
+
+netdepth = 8
+netwidth = 256
+netdepth_fine = 8
+netwidth_fine = 256
+
+batch_size = 1024
+num_points_per_ray = 3072 
+
+points_per_chunk = 4194304
+no_batching = False
+ft_path = None
+reconstruction_loss_type = L1
+smooth_deformations_type = norm_preserving
+num_iterations = -1
+learning_rate_decay_autodecoding_fraction = 0.01
+learning_rate_decay_autodecoding_iterations = 1000000
+learning_rate_decay_mlp_fraction = 1e-2
+learning_rate_decay_mlp_iterations = -1
+activation_function = LeakyReLU
+use_visualizer = False
+N_importance = 0
+perturb = 1.0
+
+use_viewdirs = False
+do_ngp_mip_nerf = False
+do_pref = False
+pref_tau_window = 3
+pref_dataset_index = -1
+do_nrnerf = False
+do_dnerf = False
+
+i_embed = 0
+multires = 10
+multires_views = 4
+raw_noise_std = 1.0
+use_background = True
+brightness_variability = 0.0
+render_only = False
+render_test = False
+color_calibration_mode = none
+
+weight_smooth_deformations = 0.0
+weight_coarse_smooth_deformations = 1000.0
+weight_fine_smooth_deformations = 30.0
+weight_parameter_regularization = 0.01
+weight_background_loss = 0.001
+weight_brightness_change_regularization = 0.0
+weight_hard_surface_loss = 1.0
+
+pure_mlp_bending = False
+coarse_parametrization = hashgrid # MLP, hashgrid
+use_global_transform = False
+coarse_and_fine = True
+fine_range = 0.1
+
+deformation_per_timestep_decay_rate = 0.1
+slow_canonical_per_timestep_learning_rate = 1e-4 
+fix_coarse_after_a_while = True
+let_canonical_vary_at_last = False
+let_only_brightness_vary = False
+keep_coarse_mlp_constant = False
+
+use_pruning = True
+voxel_grid_size = 128
+no_pruning_probability = 0.0
+
+do_vignetting_correction = True
+coarse_mlp_weight_decay = 0
+coarse_mlp_skip_connections = 2
+smoothness_robustness_threshold = 0.0
+use_half_precision = False
+do_zero_out = True
+dataset_type = blender
+testskip = 8
+use_temporal_latent_codes = False
+use_time_conditioning = False
+use_nerfies_se3 = False
+no_ndc = False
+disparity_sampling = False
+spherify = False
+llffhold = 8
+i_print = 100
+i_img = 2500
+i_testset = 200000000
+
+always_load_full_dataset = False
+no_reload = False
+allow_scratch_datadir_copy = False
+
+save_temporary_checkpoint_every = 2500
+save_checkpoint_every = 10000
+save_intermediate_checkpoint_every = 1000000
+save_per_timestep = True
+save_per_timestep_in_scratch = False
+
+i_video = 100000000

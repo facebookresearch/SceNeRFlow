@@ -1,0 +1,8 @@
+imageio==2.19.2
+imageio-ffmpeg==0.4.7
+matplotlib==3.5.2
+tqdm
+scikit-image==0.19.3
+opencv-python==4.5.5.*
+coloredlogs==15.0.1
+cmake==3.23.*
